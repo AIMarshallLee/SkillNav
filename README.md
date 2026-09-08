@@ -83,8 +83,9 @@ $skillnav 把这份 CSV 整理成准确的项目报告，检查行数和金额�
 
 SkillNav 设置 `policy.allow_implicit_invocation: false`。宿主自动刷新未出现时重新
 启动 Codex，再检查可见性；复制成功不等于当前会话已经发现。开发时可在支持文件
-激活的宿主显式提供 `skills/skillnav/SKILL.md` 的绝对路径。该方式已进行隔离测试，
-不代表已完成真实用户目录安装或菜单识别验收。
+激活的宿主显式提供 `skills/skillnav/SKILL.md` 的绝对路径。除该隔离方式外，已在用户
+确认后安装到真实用户目录，并在新的 Codex CLI 会话中仅引用 `$skillnav` 完成双技能
+接力。桌面端选择菜单是否刷新尚未单独验证，详见验证记录。
 
 ## 三个使用例子
 

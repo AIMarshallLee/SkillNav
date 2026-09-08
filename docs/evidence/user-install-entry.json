@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-08",
+  "host": "Codex CLI 0.153.4",
+  "entry": "$skillnav",
+  "installed_location": "~/.agents/skills/skillnav",
+  "installed_files_verified": 10,
+  "installed_skill_commit": "d6d3e77b4f76eafabee18f391dc138d25592dca5",
+  "fresh_ephemeral_cli_exit": 0,
+  "installed_entry_read_receipt": true,
+  "executed_scripts": [
+    "normalize-ledger/scripts/normalize.py",
+    "ledger-report/scripts/report.py"
+  ],
+  "input_rows": 3,
+  "exact_total": "45.10",
+  "source_fixture_hashes_preserved": true,
+  "installed_files_preserved": true,
+  "skillnav_memory": "neither read nor written for this test",
+  "desktop_picker_verified": false,
+  "host_warning": "Skills context budget was exceeded, but this explicitly named installed entry was read and executed successfully. No host configuration changed."
+}

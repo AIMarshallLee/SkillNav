@@ -41,6 +41,10 @@ contains the complete tested copy procedure. Use the project venv to run the ins
 scanner, or another isolated interpreter with PyYAML. The state helper uses only the
 standard library. Verify host discovery; restart if updates do not appear.
 
+After explicit user approval, the real user-directory installation was verified in a
+fresh Codex CLI session using only `$skillnav`, including a checked two-skill handoff.
+The desktop skill picker was not separately inspected.
+
 Invoke `$skillnav` plus the actual goal. Examples:
 
 - “Inventory the data skills available to this project, read-only.”
