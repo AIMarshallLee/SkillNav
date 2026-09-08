@@ -6,7 +6,7 @@
 现有技能机制上完成发现、最小组合、自动接力、产物检查和有限修复；在你同意后，
 记住有项目和任务范围的明确选择。作者：**Marshall Lee**。
 
-软件版本 **0.1.0，本地开发候选**。需求文档 V2.0/V2.1 是文档版本。
+软件版本 **0.1.0，开发候选，尚无正式 Release**。需求文档 V2.0/V2.1 是文档版本。
 适用范围与实际结果见 [验证记录](docs/verification.md)。不保证每次选对，
 不替代模型、工具运行时、权限或 Codex 原生记忆，不要求独立模型 Key 或服务端。
 
@@ -41,11 +41,11 @@
 状态与运行记录辅助代码只用标准库。当前已测环境为 macOS arm64、Python 3.11.9、
 Codex CLI 0.153.4；Windows/Linux 尚未实机验证。
 
-仓库目标：[AIMarshallLee/SkillNav](https://github.com/AIMarshallLee/SkillNav)。
-本地候选尚未推送，远端安装必须等代码获准推送后。已经持有本地代码时直接进入目录：
+源码仓库：[AIMarshallLee/SkillNav](https://github.com/AIMarshallLee/SkillNav)。
+当前候选分支为 `feat/skillnav-v0.1.0`。已经持有本地代码时直接进入目录：
 
 ```sh
-git clone https://github.com/AIMarshallLee/SkillNav.git
+git clone --branch feat/skillnav-v0.1.0 https://github.com/AIMarshallLee/SkillNav.git
 cd SkillNav
 python3 -m venv .venv
 .venv/bin/python -m pip install -r skills/skillnav/requirements.txt

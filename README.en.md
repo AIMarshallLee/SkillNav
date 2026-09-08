@@ -5,7 +5,8 @@
 SkillNav builds on Codex's existing skill mechanism. It supports bounded discovery,
 minimal skill combinations, verified execution, limited recovery, and opt-in scoped
 preferences. It is not a new model, permission system or skill runtime. Author:
-**Marshall Lee**. Software **0.1.0**, local candidate; V2.0/V2.1 refer to requirements.
+**Marshall Lee**. Software **0.1.0**, development candidate, no formal Release;
+V2.0/V2.1 refer to requirements.
 
 **Memory is off by default.** Execution does not require memory consent. Say “do not
 read or write memory this time”, “stop learning”, “stop reading memory”, “forget that
@@ -25,9 +26,8 @@ and storage remnants.
 Requires Python 3.11+ and a Codex host with authorized skill-file access. Tested on
 macOS arm64, Python 3.11.9, Codex CLI 0.153.4. Windows/Linux are unverified.
 
-The target repository is [AIMarshallLee/SkillNav](https://github.com/AIMarshallLee/SkillNav).
-The local candidate has not been pushed; use an existing local copy until publication
-is approved. From its root:
+The source repository is [AIMarshallLee/SkillNav](https://github.com/AIMarshallLee/SkillNav),
+candidate branch `feat/skillnav-v0.1.0`. From the repository root:
 
 ```sh
 python3 -m venv .venv
