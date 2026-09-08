@@ -1,0 +1,25 @@
+{
+  "kind": "synthetic-test",
+  "rows": [
+    {
+      "item": "Lake labels",
+      "quantity": "9",
+      "unit_price": "1.35",
+      "line_total": "12.15"
+    },
+    {
+      "item": "Dune folders",
+      "quantity": "3",
+      "unit_price": "7.40",
+      "line_total": "22.20"
+    },
+    {
+      "item": "Map cards",
+      "quantity": "5",
+      "unit_price": "2.15",
+      "line_total": "10.75"
+    }
+  ],
+  "item_count": 3,
+  "total": "45.10"
+}

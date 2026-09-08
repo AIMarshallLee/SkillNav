@@ -1,0 +1,485 @@
+{
+  "group": "C",
+  "total": 30,
+  "passed": 0,
+  "delivery_tasks": 26,
+  "boundary_tasks": 4,
+  "altered_inputs_or_skills": 0,
+  "results": [
+    {
+      "id": "T01",
+      "split": "training",
+      "kind": "simple",
+      "passed": false,
+      "errors": [
+        "invalid_artifact"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T01/answer.txt"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T02",
+      "split": "training",
+      "kind": "simple",
+      "passed": false,
+      "errors": [
+        "invalid_artifact"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T02/answer.txt"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T03",
+      "split": "training",
+      "kind": "simple",
+      "passed": false,
+      "errors": [
+        "invalid_artifact"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T03/answer.txt"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T04",
+      "split": "training",
+      "kind": "simple",
+      "passed": false,
+      "errors": [
+        "invalid_artifact"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T04/answer.txt"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T05",
+      "split": "training",
+      "kind": "single",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T05/report.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T06",
+      "split": "training",
+      "kind": "single",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T06/report.html"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T07",
+      "split": "training",
+      "kind": "single",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T07/report.json"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T08",
+      "split": "training",
+      "kind": "single",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T08/report.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T09",
+      "split": "training",
+      "kind": "single",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T09/report.html"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T10",
+      "split": "training",
+      "kind": "single",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T10/report.json"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T11",
+      "split": "held-out",
+      "kind": "handoff",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T11/normalized.csv",
+        "T11/report.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T12",
+      "split": "held-out",
+      "kind": "handoff",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T12/normalized.csv",
+        "T12/report.html"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T13",
+      "split": "held-out",
+      "kind": "handoff",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T13/normalized.csv",
+        "T13/report.json"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T14",
+      "split": "held-out",
+      "kind": "handoff",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T14/normalized.csv",
+        "T14/report.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T15",
+      "split": "held-out",
+      "kind": "handoff",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T15/normalized.csv",
+        "T15/report.html"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T16",
+      "split": "held-out",
+      "kind": "handoff",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T16/normalized.csv",
+        "T16/report.json"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T17",
+      "split": "held-out",
+      "kind": "preference",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T17/normalized.csv",
+        "T17/report.html"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T18",
+      "split": "held-out",
+      "kind": "exception",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T18/normalized.csv",
+        "T18/report.json"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T19",
+      "split": "held-out",
+      "kind": "other_project",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T19/normalized.csv",
+        "T19/report.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T20",
+      "split": "held-out",
+      "kind": "current_constraint",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T20/normalized.csv",
+        "T20/report.json"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T21",
+      "split": "held-out",
+      "kind": "missing_input",
+      "passed": false,
+      "errors": [
+        "invalid_artifact"
+      ],
+      "status": "blocked",
+      "artifacts": [
+        "T21/response.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T22",
+      "split": "held-out",
+      "kind": "recommend_only",
+      "passed": false,
+      "errors": [
+        "invalid_artifact"
+      ],
+      "status": "recommended",
+      "artifacts": [
+        "T22/response.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T23",
+      "split": "held-out",
+      "kind": "offline_gap",
+      "passed": false,
+      "errors": [
+        "invalid_artifact"
+      ],
+      "status": "recommended",
+      "artifacts": [
+        "T23/response.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T24",
+      "split": "held-out",
+      "kind": "disabled",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T24/normalized.csv",
+        "T24/report.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T25",
+      "split": "held-out",
+      "kind": "explicit_only",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T25/normalized.csv",
+        "T25/report.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T26",
+      "split": "held-out",
+      "kind": "injection",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T26/normalized.csv",
+        "T26/report.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T27",
+      "split": "held-out",
+      "kind": "no_memory",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T27/normalized.csv",
+        "T27/report.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T28",
+      "split": "held-out",
+      "kind": "deleted",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T28/normalized.csv",
+        "T28/report.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T29",
+      "split": "held-out",
+      "kind": "environment_changed",
+      "passed": false,
+      "errors": [
+        "invalid_artifact",
+        "invalid_artifact",
+        "expected_report_format_missing"
+      ],
+      "status": "completed",
+      "artifacts": [
+        "T29/normalized.csv",
+        "T29/report.md"
+      ],
+      "manual_handoffs_reported": 0
+    },
+    {
+      "id": "T30",
+      "split": "held-out",
+      "kind": "unsupported",
+      "passed": false,
+      "errors": [
+        "invalid_artifact"
+      ],
+      "status": "blocked",
+      "artifacts": [
+        "T30/response.md"
+      ],
+      "manual_handoffs_reported": 0
+    }
+  ],
+  "limits": "Artifact checks are independent; routing/process counts are host-reported and require receipt review. Single run is not a stable accuracy or improvement estimate."
+}

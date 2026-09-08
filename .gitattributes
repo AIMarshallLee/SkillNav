@@ -1,0 +1,2 @@
+# Preserve actual CSV evidence, including CRLF and deliberately untrimmed input.
+docs/examples/**/*.csv -text whitespace=-blank-at-eol

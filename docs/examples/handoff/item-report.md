@@ -1,0 +1,11 @@
+# Synthetic report
+
+| Item | Quantity | Unit price | Line total |
+| --- | ---: | ---: | ---: |
+| Cedar cards | 7 | 3.25 | 22.75 |
+| Amber pens | 4 | 2.40 | 9.60 |
+| Field notebook | 2 | 8.65 | 17.30 |
+
+Items: 3
+
+Total: 49.65

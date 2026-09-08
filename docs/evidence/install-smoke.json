@@ -1,0 +1,11 @@
+{
+  "files_verified": 10,
+  "strict_scan_records": 1,
+  "strict_scan_issues": 0,
+  "temporary_uninstall_verified": true,
+  "real_user_install": false,
+  "harness_corrections": [
+    "Preserve venv interpreter symlink instead of selecting dependency-free system Python.",
+    "Declare the canonical temporary root: scanner correctly rejects undeclared root symlink targets."
+  ]
+}

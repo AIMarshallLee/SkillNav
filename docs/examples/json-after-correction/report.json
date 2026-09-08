@@ -1,0 +1,19 @@
+{
+  "kind": "synthetic-test",
+  "rows": [
+    {
+      "item": "Silver tabs",
+      "quantity": "6",
+      "unit_price": "1.25",
+      "line_total": "7.50"
+    },
+    {
+      "item": "River cards",
+      "quantity": "2",
+      "unit_price": "9.35",
+      "line_total": "18.70"
+    }
+  ],
+  "item_count": 2,
+  "total": "26.20"
+}

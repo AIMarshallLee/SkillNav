@@ -1,0 +1,6 @@
+interface:
+  display_name: "SkillNav"
+  short_description: "Use existing skills, deliver work, remember scoped choices"
+  default_prompt: "Use $skillnav to choose suitable existing skills, complete my task, and verify the result."
+policy:
+  allow_implicit_invocation: false
