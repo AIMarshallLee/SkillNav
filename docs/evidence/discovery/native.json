@@ -1,0 +1,146 @@
+{
+  "group": "A",
+  "cases": 12,
+  "skills_per_case": 364,
+  "artifacts_passed": 12,
+  "declared_decisions_passed": 12,
+  "artifact_and_declaration_checks_passed": 12,
+  "host_receipts_verified": false,
+  "behavioral_acceptance": "not_established_by_this_checker",
+  "altered_inputs_or_skills": 0,
+  "labels_sha256": "24eb49f26e46b07291ee48bc6081892bf3b59600099c050db9f53c33007ecd79",
+  "results": [
+    {
+      "id": "S01",
+      "expected_decision": "direct",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [],
+      "artifact_and_declaration_checks_passed": true
+    },
+    {
+      "id": "S02",
+      "expected_decision": "direct",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [],
+      "artifact_and_declaration_checks_passed": true
+    },
+    {
+      "id": "S03",
+      "expected_decision": "direct",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [],
+      "artifact_and_declaration_checks_passed": true
+    },
+    {
+      "id": "S04",
+      "expected_decision": "direct",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [],
+      "artifact_and_declaration_checks_passed": true
+    },
+    {
+      "id": "K01",
+      "expected_decision": "skill",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [
+        "amber-kit"
+      ],
+      "artifact_and_declaration_checks_passed": true
+    },
+    {
+      "id": "K02",
+      "expected_decision": "skill",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [
+        "cedar-kit"
+      ],
+      "artifact_and_declaration_checks_passed": true
+    },
+    {
+      "id": "K03",
+      "expected_decision": "skill",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [
+        "amber-kit"
+      ],
+      "artifact_and_declaration_checks_passed": true
+    },
+    {
+      "id": "K04",
+      "expected_decision": "skill",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [
+        "amber-kit",
+        "harbor-kit"
+      ],
+      "artifact_and_declaration_checks_passed": true
+    },
+    {
+      "id": "K05",
+      "expected_decision": "skill",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [
+        "cedar-kit"
+      ],
+      "artifact_and_declaration_checks_passed": true
+    },
+    {
+      "id": "R01",
+      "expected_decision": "recommend",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [],
+      "artifact_and_declaration_checks_passed": true
+    },
+    {
+      "id": "B01",
+      "expected_decision": "blocked",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [],
+      "artifact_and_declaration_checks_passed": true
+    },
+    {
+      "id": "B02",
+      "expected_decision": "blocked",
+      "artifacts_passed": true,
+      "artifact_errors": [],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [],
+      "artifact_and_declaration_checks_passed": true
+    }
+  ],
+  "limits": "Synthetic metadata-truncation scenario. File checks are independent; declared routing/application needs host tool-receipt review. One run cannot establish superiority or stable real-user accuracy."
+}

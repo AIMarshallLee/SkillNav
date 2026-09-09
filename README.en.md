@@ -1,10 +1,13 @@
 # SkillNav
 
-**One explicit entry: choose skills, use them, hand off real outputs, and check delivery.**
+**Does a skill help? Which one? Was it actually used?**
 
-SkillNav builds on Codex's existing skill mechanism. It supports bounded discovery,
-minimal skill combinations, verified execution, limited recovery, and opt-in scoped
-preferences. It is not a new model, permission system or skill runtime. Author:
+SkillNav builds on Codex's existing matching and planning. It handles simple tasks
+directly, retrieves relevant metadata when a large catalog is incomplete, checks
+eligibility, applies useful skills and gives a short evidence-based delivery receipt.
+Multi-term retrieval defaults to 12 candidates; lexical overlap is not a quality score.
+Scoped preferences remain optional. No proven general accuracy, speed or token-cost
+advantage over native Codex is claimed. Author:
 **Marshall Lee**. Software **0.1.0**, development candidate, no formal Release;
 V2.0/V2.1 refer to requirements.
 
@@ -75,6 +78,9 @@ the host. Uninstalling does not silently delete the DB or development venv.
 
 [Verification and E01–E10](docs/verification.md) · [Memory controls and JSON API](skills/skillnav/references/memory.md)
 · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
+
+[Large-catalog routing validation](docs/routing-validation.md) separates artifact
+correctness, appropriate skill decisions and actual use evidence, including failures.
 
 Copyright 2026 Marshall Lee. [Apache-2.0](LICENSE). PyYAML is an external MIT-licensed
 dependency, not vendored. Synthetic fixtures are original test material.

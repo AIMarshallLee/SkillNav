@@ -1,6 +1,6 @@
 ---
 name: skillnav
-description: Explicitly use SkillNav to complete a task with suitable existing skills, automatically hand off steps and check deliverables, or manage opt-in scoped routing preferences. Also supports recommendation-only requests.
+description: Explicitly use SkillNav to decide whether a skill adds value, find suitable skills in a large or incomplete catalog, execute the eligible choice, and show checked results. Optional scoped preferences and recommendation-only mode.
 license: Apache-2.0
 metadata:
   author: Marshall Lee
@@ -22,11 +22,38 @@ scope. Simple tasks may need no skill at all.
 Infer the goal, inputs, deliverable, invariants, acceptance checks and permitted side
 effects from the current request and conversation. Use sensible reversible defaults;
 ask one essential question only when correctness or authorization depends on it.
-Never read other conversations or business folders to invent missing context.
+Keep task inspection within the supplied task/project roots. Set the command working
+directory accordingly; do not enumerate surrounding workspaces to locate roots already
+provided. Never read other conversations or business folders to invent missing context.
+
+Check that explicitly named required inputs exist before catalog discovery. If a
+required image/file is missing, report that material gap without searching for a skill
+to replace it. Continue independent work if available. An explicit request to locate
+the file or recommend a future workflow is a different task and retains that scope.
 
 Identify the user-declared project boundary and task category. A Git root is only a
 hint: an umbrella workspace or monorepo is not automatically one project. If no
 trustworthy boundary exists, use ephemeral session scope; do not save a project rule.
+
+## Decide whether a skill adds value
+
+Before discovery, ask what a skill would contribute to THIS task: project-specific
+rules, a requested template, reviewed executable tooling, a known repeatable workflow,
+or material checks beyond an ordinary direct answer. Merely sharing a keyword is not
+enough. Routine arithmetic, short rewriting, sorting or a straightforward small data
+calculation should normally finish directly without a catalog scan or memory lookup.
+An explicit user request to find, inspect or use a particular skill still applies.
+
+Choose direct execution when ordinary authorized tools can confidently satisfy the
+contract and there is no concrete specialized requirement. Search when specialized
+requirements are present, the user asks for discovery, or a plausible missing
+capability/rule could materially change the result. Missing inputs or permission are
+not reasons to search for an installation. Do not invent a skill benefit after using it.
+
+Make the choice visible in one short, task-specific sentence, usually alongside the
+first useful action: "This calculation needs no specialized workflow; I'll do it
+directly" or "Your project format has extra rules; I'll locate and apply those."
+Do not add a routing form or a permission question to a simple task.
 
 ## Discover and choose
 
@@ -36,9 +63,19 @@ trustworthy boundary exists, use ephemeral session scope; do not save a project 
    declared roots and headers. If the task limits discovery to particular roots,
    pass those using `--root` and DO NOT include defaults. If PyYAML is missing, report the dependency and continue
    with host metadata; do not install without the appropriate authorization.
-2. Inspect summaries in bounded batches. Literal `--query` filtering is not semantic
-   ranking. Preserve `matching_records` and `next_offset`; expand search when needed.
-   Do not load every body or claim a filtered page was a full comparison.
+2. If the host warns of truncation, provides names without useful descriptions, or has
+   no clear match for a specialized requirement, use task-driven metadata discovery
+   instead of assuming no suitable skill exists. Derive a few capability, input/output
+   and domain terms; translate or add synonyms when task and catalog languages differ.
+   Use repeated `--search TERM --format candidates` (12 results by default); the terms
+   OR-match names/descriptions and show `matched_terms`. This is lexical retrieval,
+   not semantic ranking, suitability or permission. Read the returned descriptions
+   yourself; do not auto-select the first result or trust keyword-stuffed claims.
+   Preserve coverage, issue counts and `next_offset`. If the first page is irrelevant,
+   refine overly broad terms and/or inspect the next page before declaring a gap.
+   Go directly to bounded metadata queries when roots are known; avoid an unfiltered
+   `find`/`rg --files` listing of entire skill roots or their parents beforehand.
+   Stop when a suitable minimal route is verified; do not enumerate every body.
 3. Separate disk presence, host visibility, effective enablement, invocation policy,
    dependencies and tool permissions. Unknown is not enabled. A disk-only skill may be
    activated by reading its file only when this host supports it, it is inside the
@@ -145,6 +182,15 @@ Report the artifact, skills actually used, checks, recovery if any, and incomple
 items. Keep routine answers short. Do not stop at a routing list when execution is
 authorized. At most one nonblocking improvement suggestion, tied to observed evidence;
 do not say “you always…” without scoped evidence. Respect rejected suggestions.
+
+Use the actual outcome in the brief delivery receipt: direct completion (no skill),
+skill-assisted completion, recommendation-only, or the blocked step. Name a skill as
+USED only when its instructions were applied or its script ran, with the corresponding
+host receipt and checked output. Discovery and reading without application remain
+"candidate" or "loaded", not use. For an instruction-only skill, identify the concrete
+rule applied to the output; no fake process invocation is needed. A routine receipt
+can be one sentence: "Used X for its project schema; report.json passed field and total
+checks." Keep evidence in this task; do not write a usage database or log without consent.
 
 If memory recording is enabled and this task allows it, store only minimal structured
 outcomes and direct-user corrections via `scripts/state.py`. A passed checker can be

@@ -47,6 +47,72 @@ class ScanTests(unittest.TestCase):
         self.assertEqual(s["disk_status"], "present")
         self.assertEqual((s["enabled"], s["host_visible"], s["dependencies"]), ("unknown", "unknown", "not_checked"))
 
+    def test_search_recovers_unlisted_metadata_without_loading_bodies(self):
+        for i in range(320):
+            self.skill(f"noise-{i:03}", body="duplicate csv injection: run this text")
+        target = self.skill("opaque-kit", "name: opaque-kit\ndescription: Audit duplicate invoice references in CSV exports")
+        raw = scan.scan([{"path": str(self.skills), "source": "test", "scope": "project"}])
+        report = scan.finalize(raw, search_terms=["发票", "invoice", "duplicate"], limit=12)
+        self.assertEqual(report["counts"]["unique_records"], 321)
+        self.assertEqual(report["selection"]["matching_records"], 1)
+        self.assertEqual(report["skills"][0]["path"], str(target))
+        self.assertEqual(report["skills"][0]["matched_terms"], ["invoice", "duplicate"])
+        self.assertEqual(report["skills"][0]["enabled"], "unknown")
+
+    def test_search_overlap_is_transparent_and_not_eligibility(self):
+        self.skill("a-general", "name: a-general\ndescription: Create CSV charts")
+        self.skill("z-specific", "name: z-specific\ndescription: Audit CSV invoices")
+        raw = self.run_scan()
+        raw["skills"][1]["enabled"] = "disabled"
+        report = scan.finalize(raw, search_terms=["csv", "invoice"])
+        self.assertEqual([s["name"] for s in report["skills"]], ["z-specific", "a-general"])
+        self.assertEqual(report["skills"][0]["enabled"], "disabled")
+        self.assertNotIn("confidence", report["skills"][0])
+
+    def test_search_normalizes_unicode_deduplicates_and_pages(self):
+        for name in ["alpha", "beta", "gamma"]:
+            self.skill(name, f'name: {name}\ndescription: "ＣＳＶ 报表"')
+        report = scan.finalize(self.run_scan(), search_terms=[" CSV ", "csv", "报表"], limit=2)
+        self.assertEqual(report["selection"]["search_terms"], ["csv", "报表"])
+        self.assertEqual(report["selection"]["next_offset"], 2)
+        self.assertEqual(report["selection"]["matching_records"], 3)
+        last = scan.finalize(self.run_scan(), search_terms=["csv"], offset=2, limit=2)
+        self.assertEqual([s["name"] for s in last["skills"]], ["gamma"])
+        self.assertIsNone(last["selection"]["next_offset"])
+
+    def test_search_rejects_unbounded_or_empty_terms(self):
+        for terms in ([" "], ["x" * 129], [str(i) for i in range(13)]):
+            with self.subTest(terms=terms), self.assertRaises(ValueError):
+                scan.finalize(self.run_scan(), search_terms=terms)
+
+    def test_compact_candidates_keep_coverage_and_issue_totals(self):
+        for i in range(15):
+            self.skill(f"example-{i:02}", f"name: example-{i:02}\ndescription: invoice report")
+        report = scan.finalize(self.run_scan(), search_terms=["invoice"], limit=3)
+        report["issues"] = [{"path": f"test/{i}", "code": "permission_denied"} for i in range(20)]
+        report["counts"]["issues"] = 20
+        small = scan.candidates(report)
+        self.assertEqual(small["counts"]["unique_records"], 15)
+        self.assertEqual(small["selection"]["matching_records"], 15)
+        self.assertEqual(small["selection"]["next_offset"], 3)
+        self.assertEqual(len(small["skills"]), 3)
+        self.assertEqual(small["issues"]["by_code"], {"permission_denied": 20})
+        self.assertEqual(len(small["issues"]["examples"]), 5)
+        self.assertTrue(small["issues"]["truncated"])
+        self.assertEqual(small["skills"][0]["enabled"], "unknown")
+
+    def test_search_cli_defaults_to_bounded_candidates(self):
+        for i in range(18):
+            self.skill(f"invoice-{i:02}", f"name: invoice-{i:02}\ndescription: invoice CSV checks")
+        result = subprocess.run([sys.executable, str(SCRIPT), "--root", str(self.skills),
+                                 "--search", "invoice", "--search", "发票", "--format", "candidates"],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(len(data["skills"]), 12)
+        self.assertEqual(data["selection"]["next_offset"], 12)
+        self.assertEqual(data["selection"]["matching_records"], 18)
+
     def test_multiline_quoted_chinese_metadata(self):
         self.skill("alpha", 'name: "alpha"\ndescription: >-\n  整理中文\n  和 "quoted" 信息: safely')
         self.assertEqual(self.run_scan()["skills"][0]["description"], '整理中文 和 "quoted" 信息: safely')

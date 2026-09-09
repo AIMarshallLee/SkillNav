@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import errno
 import json
 import os
@@ -10,6 +11,7 @@ from pathlib import Path
 import stat
 import subprocess
 import sys
+import unicodedata
 
 VERSION = "0.1.0"
 MAX_HEADER_BYTES = 32768
@@ -299,7 +301,21 @@ def merge_host_catalog(report, path):
         found["host_visible"] = "visible"
 
 
-def finalize(report, query=None, offset=0, limit=None):
+def normalize_terms(terms):
+    """Host-chosen concepts, not automatic translation or semantic embeddings."""
+    if not isinstance(terms, (list, tuple)) or not 1 <= len(terms) <= 12:
+        raise ValueError("search_requires_1_to_12_terms")
+    normalized = []
+    for term in terms:
+        if not isinstance(term, str) or not term.strip() or len(term) > 128:
+            raise ValueError("search_terms_must_be_nonempty_and_at_most_128_characters")
+        value = unicodedata.normalize("NFKC", term).strip().casefold()
+        if value not in normalized:
+            normalized.append(value)
+    return normalized
+
+
+def finalize(report, query=None, offset=0, limit=None, *, search_terms=None):
     skills = sorted(report["skills"], key=lambda s: ((s["name"] or "").casefold(), s["path"]))
     for skill in skills:
         skill["origins"] = sorted({json.dumps(o, sort_keys=True): o for o in skill["origins"]}.values(),
@@ -309,15 +325,45 @@ def finalize(report, query=None, offset=0, limit=None):
                         "readable_files": sum(s["read_status"] == "readable" for s in skills),
                         "host_visible": sum(s["host_visible"] == "visible" for s in skills),
                         "issues": len(report["issues"])}
-    matched = [s for s in skills if not query or query.casefold() in
-               ((s["name"] or "") + " " + (s["description"] or "")).casefold()]
+    terms = normalize_terms(search_terms) if search_terms is not None else None
+    if terms:
+        matched = []
+        for skill in skills:
+            text = unicodedata.normalize("NFKC", (skill["name"] or "") + " " +
+                                         (skill["description"] or "")).casefold()
+            skill["matched_terms"] = [term for term in terms if term in text]
+            if skill["matched_terms"]:
+                matched.append(skill)
+        # This orders lexical overlap only. Never imply enablement, quality or confidence.
+        matched.sort(key=lambda s: (-len(s["matched_terms"]), (s["name"] or "").casefold(), s["path"]))
+    else:
+        matched = [s for s in skills if not query or query.casefold() in
+                   ((s["name"] or "") + " " + (s["description"] or "")).casefold()]
     page = matched[offset:None if limit is None else offset + limit]
     report["selection"] = {"query": query, "matching_records": len(matched), "offset": offset,
                            "returned": len(page), "next_offset": offset + len(page)
                            if offset + len(page) < len(matched) else None,
                            "comparison": "literal_filter_only_not_semantic_ranking"}
+    if terms:
+        report["selection"].update(search_terms=terms,
+                                   comparison="lexical_term_overlap_not_quality_or_semantic_confidence")
     report["skills"] = page
     return report
+
+
+def candidates(report):
+    """Small model-facing page; keep scope/coverage rather than dumping inventories."""
+    fields = ("name", "description", "path", "source", "scope", "read_status",
+              "enabled", "host_visible", "dependencies", "matched_terms")
+    return {"version": report["version"], "counts": report["counts"],
+            "selection": report["selection"],
+            "roots": [{k: root[k] for k in ("path", "source", "scope", "status")}
+                      for root in report["roots"]],
+            "skills": [{k: skill[k] for k in fields if k in skill} for skill in report["skills"]],
+            "issues": {"count": len(report["issues"]),
+                       "by_code": dict(sorted(Counter(i["code"] for i in report["issues"]).items())),
+                       "examples": report["issues"][:5], "truncated": len(report["issues"]) > 5},
+            "limitations": report["limitations"]}
 
 
 def summary(report):
@@ -328,7 +374,8 @@ def summary(report):
     lines.append("Selection: " + json.dumps(report["selection"], ensure_ascii=False))
     for skill in report["skills"]:
         lines.append(json.dumps({k: skill[k] for k in ("name", "description", "path", "source", "scope",
-                           "read_status", "enabled", "host_visible", "dependencies")}, ensure_ascii=False))
+                           "read_status", "enabled", "host_visible", "dependencies", "matched_terms")
+                                if k in skill}, ensure_ascii=False))
     lines.extend("Issue: " + json.dumps(i, ensure_ascii=False) for i in report["issues"])
     lines.extend("Limit: " + line for line in report["limitations"])
     # JSON lines escape untrusted control characters in all variable fields.
@@ -341,8 +388,10 @@ def main(argv=None):
     parser.add_argument("--root", action="append", default=[], help="Declared skill root; repeatable. Replaces defaults.")
     parser.add_argument("--include-defaults", action="store_true", help="Include standard roots with explicit roots.")
     parser.add_argument("--host-catalog", help="Explicit sanitized JSON metadata list, never a Codex config file.")
-    parser.add_argument("--format", choices=("json", "summary"), default="json")
-    parser.add_argument("--query", help="Literal case-insensitive name/description filter, not semantic routing.")
+    parser.add_argument("--format", choices=("json", "summary", "candidates"), default="json")
+    search = parser.add_mutually_exclusive_group()
+    search.add_argument("--query", help="Literal case-insensitive name/description filter, not semantic routing.")
+    search.add_argument("--search", action="append", help="Repeat task terms/synonyms; OR-match metadata, order by term overlap only.")
     parser.add_argument("--offset", type=int, default=0)
     parser.add_argument("--limit", type=int)
     parser.add_argument("--max-dirs", type=int, default=10000)
@@ -351,6 +400,11 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if args.offset < 0 or (args.limit is not None and args.limit <= 0) or args.max_dirs <= 0 or args.max_depth < 0:
         parser.error("offset/depth must be nonnegative; limit/max-dirs must be positive")
+    if args.search:
+        try:
+            normalize_terms(args.search)
+        except ValueError as exc:
+            parser.error(str(exc))
     if yaml is None:
         print(json.dumps({"error": "missing_pyyaml", "action": "Use a project venv and install the skill's requirements.txt."}), file=sys.stderr)
         return 2
@@ -359,8 +413,13 @@ def main(argv=None):
     report = scan(roots, max_dirs=args.max_dirs, max_depth=args.max_depth)
     if args.host_catalog:
         merge_host_catalog(report, args.host_catalog)
-    finalize(report, args.query, args.offset, args.limit)
-    print(json.dumps(report, ensure_ascii=False, indent=2) if args.format == "json" else summary(report))
+    limit = args.limit if args.limit is not None else (12 if args.search or args.format == "candidates" else None)
+    finalize(report, args.query, args.offset, limit, search_terms=args.search)
+    if args.format == "summary":
+        print(summary(report))
+    else:
+        print(json.dumps(candidates(report) if args.format == "candidates" else report,
+                         ensure_ascii=False, indent=2))
     return 1 if args.strict and report["issues"] else 0
 
 

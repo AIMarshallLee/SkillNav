@@ -1,0 +1,216 @@
+{
+  "group": "B",
+  "cases": 12,
+  "skills_per_case": 364,
+  "artifacts_passed": 0,
+  "declared_decisions_passed": 9,
+  "passed": 0,
+  "altered_inputs_or_skills": 0,
+  "labels_sha256": "24eb49f26e46b07291ee48bc6081892bf3b59600099c050db9f53c33007ecd79",
+  "results": [
+    {
+      "id": "S01",
+      "expected_decision": "direct",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "missing_expected_artifact:answer.txt",
+        "answer_mismatch"
+      ],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [],
+      "passed": false
+    },
+    {
+      "id": "S02",
+      "expected_decision": "direct",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "missing_expected_artifact:answer.txt",
+        "answer_mismatch"
+      ],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [],
+      "passed": false
+    },
+    {
+      "id": "S03",
+      "expected_decision": "direct",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "missing_expected_artifact:answer.txt",
+        "answer_mismatch"
+      ],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [],
+      "passed": false
+    },
+    {
+      "id": "S04",
+      "expected_decision": "direct",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "missing_expected_artifact:answer.txt",
+        "answer_mismatch"
+      ],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [],
+      "passed": false
+    },
+    {
+      "id": "K01",
+      "expected_decision": "skill",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "missing_expected_artifact:result.json",
+        "invalid_invoice_json"
+      ],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [
+        "amber-kit"
+      ],
+      "passed": false
+    },
+    {
+      "id": "K02",
+      "expected_decision": "skill",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "missing_expected_artifact:result.md",
+        "release_contract_mismatch:# Project update",
+        "release_contract_mismatch:## Added",
+        "release_contract_mismatch:## Fixed",
+        "release_contract_mismatch:- Export filtered records",
+        "release_contract_mismatch:- Preserve empty cells",
+        "release_contract_mismatch:Review: project-team"
+      ],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [
+        "cedar-kit"
+      ],
+      "passed": false
+    },
+    {
+      "id": "K03",
+      "expected_decision": "skill",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "missing_expected_artifact:result.json",
+        "invalid_invoice_json"
+      ],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [
+        "amber-kit"
+      ],
+      "passed": false
+    },
+    {
+      "id": "K04",
+      "expected_decision": "skill",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "invalid_artifact_path",
+        "missing_expected_artifact:result.json",
+        "invalid_invoice_json",
+        "missing_expected_artifact:notice.md",
+        "notice_contract_mismatch:# Billing notice",
+        "notice_contract_mismatch:Amount due: 17.50",
+        "notice_contract_mismatch:Duplicate references: INV-17",
+        "notice_contract_mismatch:Status: draft"
+      ],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [
+        "amber-kit",
+        "harbor-kit"
+      ],
+      "passed": false
+    },
+    {
+      "id": "K05",
+      "expected_decision": "skill",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "missing_expected_artifact:result.md",
+        "release_contract_mismatch:# Project update",
+        "release_contract_mismatch:## Added",
+        "release_contract_mismatch:## Fixed",
+        "release_contract_mismatch:- Export filtered records",
+        "release_contract_mismatch:- Preserve empty cells",
+        "release_contract_mismatch:Review: project-team"
+      ],
+      "declared_decision_passed": true,
+      "decision_errors": [],
+      "reported_applied_skills": [
+        "cedar-kit"
+      ],
+      "passed": false
+    },
+    {
+      "id": "R01",
+      "expected_decision": "recommend",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "missing_expected_artifact:response.md",
+        "empty_boundary_response"
+      ],
+      "declared_decision_passed": false,
+      "decision_errors": [
+        "suitable_recommendation_missing"
+      ],
+      "reported_applied_skills": [],
+      "passed": false
+    },
+    {
+      "id": "B01",
+      "expected_decision": "blocked",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "missing_expected_artifact:response.md",
+        "empty_boundary_response"
+      ],
+      "declared_decision_passed": false,
+      "decision_errors": [
+        "manual_handoff_or_unknown"
+      ],
+      "reported_applied_skills": [],
+      "passed": false
+    },
+    {
+      "id": "B02",
+      "expected_decision": "blocked",
+      "artifacts_passed": false,
+      "artifact_errors": [
+        "invalid_artifact_path",
+        "missing_expected_artifact:response.md",
+        "empty_boundary_response",
+        "status_mismatch"
+      ],
+      "declared_decision_passed": false,
+      "decision_errors": [
+        "decision_mismatch",
+        "manual_handoff_or_unknown"
+      ],
+      "reported_applied_skills": [],
+      "passed": false
+    }
+  ],
+  "limits": "Synthetic metadata-truncation scenario. File checks are independent; declared routing/application needs host tool-receipt review. One run cannot establish superiority or stable real-user accuracy."
+}

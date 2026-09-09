@@ -1,0 +1,8 @@
+{
+  "format": "bill-audit/1",
+  "input_rows": 3,
+  "duplicate_refs": [
+    "INV-17"
+  ],
+  "payable_total": "17.50"
+}

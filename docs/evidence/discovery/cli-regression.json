@@ -1,0 +1,146 @@
+{
+  "date": "2026-09-09",
+  "host": "Codex CLI 0.153.4",
+  "entry": "$skillnav",
+  "fresh_ephemeral_runs": true,
+  "installed_files_verified": 10,
+  "installed_SKILL_sha256": "ad314d2e865c9b983f88935aee968c1895c4965c813e4c81064649bc9dde6ebe",
+  "memory": "No persistent state read or written in these tasks",
+  "checks": [
+    {
+      "case": "direct",
+      "artifact_contract_passed": true,
+      "source_files_checked": 729,
+      "source_hashes_preserved": true,
+      "completed_commands": 1,
+      "command_failures": 0,
+      "installed_scanner_calls": 0,
+      "event_log_sha256": "fba0e733f02c13130c1f223af7072ce231e4d33336bb91931ad892bbd30b7f0a"
+    },
+    {
+      "case": "specialized",
+      "artifact_contract_passed": true,
+      "source_files_checked": 730,
+      "source_hashes_preserved": true,
+      "completed_commands": 9,
+      "command_failures": 0,
+      "installed_scanner_calls": 0,
+      "event_log_sha256": "f9f6a1f6c3006f929ad0f9d53968b48cf626f0263c9f75fbeb735b2c1eea28e9"
+    },
+    {
+      "case": "scope",
+      "artifact_contract_passed": true,
+      "source_files_checked": 730,
+      "source_hashes_preserved": true,
+      "completed_commands": 13,
+      "command_failures": 0,
+      "installed_scanner_calls": 2,
+      "event_log_sha256": "ba9fc752aa1707f5b7aa3ec492de02cf8c6fc5c43748c5f80da6a6c0d532db0b"
+    }
+  ],
+  "scope_regression": {
+    "elapsed_seconds": 93.63,
+    "host_catalog_warning": "All descriptions removed; 381 additional skills omitted",
+    "queries": [
+      {
+        "receipt_item": "item_6",
+        "declared_root": ".agents/skills",
+        "records": 364,
+        "issues": 0,
+        "selection": {
+          "query": null,
+          "matching_records": 93,
+          "offset": 0,
+          "returned": 12,
+          "next_offset": 12,
+          "comparison": "lexical_term_overlap_not_quality_or_semantic_confidence",
+          "search_terms": [
+            "发票",
+            "invoice",
+            "duplicate",
+            "客户通知",
+            "notice"
+          ]
+        }
+      },
+      {
+        "receipt_item": "item_8",
+        "declared_root": ".agents/skills",
+        "records": 364,
+        "issues": 0,
+        "selection": {
+          "query": null,
+          "matching_records": 3,
+          "offset": 0,
+          "returned": 3,
+          "next_offset": null,
+          "comparison": "lexical_term_overlap_not_quality_or_semantic_confidence",
+          "search_terms": [
+            "bill-audit/1",
+            "客户通知",
+            "notice",
+            "notification"
+          ]
+        }
+      }
+    ],
+    "observed_operations": [
+      {
+        "receipt_item": "item_4",
+        "action": "Read installed SkillNav references/scanning.md"
+      },
+      {
+        "receipt_items": [
+          "item_6",
+          "item_8"
+        ],
+        "action": "Run installed SkillNav scanner against case-local declared root only"
+      },
+      {
+        "receipt_items": [
+          "item_7",
+          "item_10"
+        ],
+        "action": "Read selected downstream invocation policies"
+      },
+      {
+        "receipt_items": [
+          "item_9",
+          "item_11",
+          "item_12"
+        ],
+        "action": "Read amber-kit instructions/script and harbor-kit instructions"
+      },
+      {
+        "receipt_item": "item_14",
+        "action": "Execute amber-kit/scripts/audit.py input.csv result.json"
+      },
+      {
+        "receipt_item": "item_15",
+        "action": "Independently recompute and check invoice JSON fields"
+      },
+      {
+        "receipt_item": "item_16",
+        "action": "Read checked JSON, apply harbor-kit notice rules, write and check draft"
+      }
+    ],
+    "broad_skill_directory_dump_observed": false,
+    "surrounding_workspace_enumeration_observed": false,
+    "artifact": {
+      "format": "bill-audit/1",
+      "input_rows": 3,
+      "duplicate_refs": [
+        "INV-17"
+      ],
+      "payable_total": "17.50"
+    },
+    "instruction_application": "harbor-kit required heading, amount from actual JSON, duplicates, final draft status",
+    "entry_injection_claim": "Model reported native skill injection; independent event evidence here proves installed reference/scanner use, not a separately captured host injection event"
+  },
+  "limitations": [
+    "Single known-case regressions, not superiority or stable accuracy evidence.",
+    "The earlier specialized run used an allowed custom metadata fallback due to a restrictive test prompt; it does not prove installed scanner execution.",
+    "Raw events reviewed by this task, not an independent third-party audit; private machine paths omitted.",
+    "Durations and command counts are observations, not matched performance benchmarks."
+  ]
+}

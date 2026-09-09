@@ -1,0 +1,13 @@
+{
+  "skills_per_catalog": 364,
+  "full_json_bytes": 268002,
+  "candidate_json_bytes": 6353,
+  "terms": [
+    "发票",
+    "invoice",
+    "duplicate"
+  ],
+  "returned": 12,
+  "matching_records": 92,
+  "limits": "Serialized UTF-8 byte count from synthetic fixture; not model tokens, task latency or end-to-end cost savings."
+}

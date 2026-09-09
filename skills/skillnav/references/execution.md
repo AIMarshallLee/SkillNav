@@ -40,3 +40,16 @@ Quality examples: CSV field names, independent row count and decimal totals; cod
 regression tests; document readability and requirement coverage. Keep required checks
 stable through recovery. Label model style judgments separately. A user can reject a
 technically valid result; preserve both states.
+
+## A short, truthful decision receipt
+
+The user should be able to distinguish the choice and the actual work without reading
+an execution transcript. Say why the selected route adds value before using it; after
+execution, name what was actually applied and the concrete checks. If the direct path
+was sufficient, say no Skill was needed. Recommendations stay recommendations.
+
+For script skills, tie use to a real execution receipt and the resulting checked file.
+For instruction skills, tie it to the actual project rule/template applied to output.
+File loading alone, a selected name or a model-generated success flag does not establish
+use. Do not claim "all skills compared" after reading one candidate page. Keep these
+receipts in the normal answer unless a separate evaluation artifact was requested.
