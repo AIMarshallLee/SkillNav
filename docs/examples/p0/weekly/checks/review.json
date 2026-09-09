@@ -1,0 +1,48 @@
+{
+  "skill_root": "drafts/team-weekly-brief",
+  "review_type": "bounded_static_indicators",
+  "automated_verdict": "no_indicators_in_scanned_text",
+  "coverage": {
+    "complete": true,
+    "files_read": 2,
+    "bytes_read": 2504,
+    "entries_inspected": 3,
+    "skipped_entries": 0
+  },
+  "limits": {
+    "max_files": 128,
+    "max_file_bytes": 131072,
+    "max_total_bytes": 1048576,
+    "max_depth": 8,
+    "max_entries": 1024,
+    "max_findings": 64
+  },
+  "findings": [],
+  "findings_by_category": {},
+  "findings_truncated": false,
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2160,
+      "sha256": "02f984cd60cd4cc7f17476cc558bb7bd9ea0d032084ebfefd4176122217660c0"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 344,
+      "sha256": "ebc570c6806c4686b696b827e85a7ffa5d9ead501c04e8915458b2e892da8fd4"
+    }
+  ],
+  "skipped": [],
+  "snapshot_sha256": "158a7a7cf4e9dbe9e3b4a63a6aba1b1d6c3e742957c888f16e5a3d3aef96bc13",
+  "snapshot_scope": "Only successfully read text files; skipped content is not fingerprinted",
+  "source_verification": "not_performed",
+  "execution_performed": false,
+  "safety_certified": false,
+  "limitations": [
+    "Pattern indicators need contextual review; documentation and prohibitions can match.",
+    "No matches do not establish safety. Obfuscation, dependencies, remote content and runtime behavior may be missed.",
+    "No candidate code, imports, installs, network calls or state writes are performed.",
+    "Use a trusted stable local directory and host sandbox; this is not isolation against hostile concurrent filesystem changes.",
+    "Review actual source/provenance, task fit, enablement, permissions and any unreviewed executable content before use."
+  ]
+}

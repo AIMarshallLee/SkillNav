@@ -1,0 +1,11 @@
+{
+  "valid": true,
+  "path": "drafts/team-weekly-brief",
+  "name": "team-weekly-brief",
+  "allow_implicit_invocation": true,
+  "limitations": [
+    "Structural validation does not prove behavior or user acceptance.",
+    "Validation handles supported inline local Markdown links only; it is not a full Markdown parser and does not verify remote URIs.",
+    "Validation and creation assume the supplied root remains stable during the operation."
+  ]
+}

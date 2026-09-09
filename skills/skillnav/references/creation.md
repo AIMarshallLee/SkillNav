@@ -5,6 +5,10 @@ to create/improve a skill or explicitly preserve a reusable procedure. A formatt
 default may fit a scoped preference; a one-off result needs neither a new skill nor
 persistent memory. Creating a skill is not consent to copy conversations or customer
 examples into it. Do not start this mode merely because discovery had no match.
+With a clear creation request and supplied rules, begin from those rules and the named
+draft location. Do not query skill roots just to find a creator. Inspect an existing
+target directly for an update; discover reusable candidates only for a concrete missing
+capability, not as a mandatory first step.
 
 ## Specify the repeatable behavior
 
@@ -73,6 +77,10 @@ generator or a script runner. Do not claim unsupported resources were generated 
    concrete rules were applied. A helper exit code, an invented test log or the creator's
    own prediction cannot establish behavioral success. Do not ship example answers as
    if a trial produced them.
+   Assign separate paths/roles to the generated skill, its trial output and the trial
+   report. Check the trial output itself against the source rules; the report summarizes
+   those checks and links the output. Where file roles or formats could be confused,
+   use the optional [file contract](execution.md#preflight-and-file-contracts).
 5. Fix demonstrated failures within the normal recovery bounds and rerun affected checks.
    If tools, inputs or permissions prevent a real trial, deliver the draft and label it
    structurally checked but behaviorally unverified. Never quietly waive that distinction.

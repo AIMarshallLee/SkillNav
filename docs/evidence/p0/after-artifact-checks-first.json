@@ -1,0 +1,20 @@
+{
+  "variant": "after",
+  "checks": {
+    "original_inputs_preserved": true,
+    "weekly_output": true,
+    "weekly_trial_report": true,
+    "created_skill": true,
+    "table_totals": true,
+    "table_report": true,
+    "wrong_route_marker_absent": true,
+    "content_output": false,
+    "content_report": true,
+    "review_report": true,
+    "review_canary_not_echoed": true,
+    "review_marker_absent": true
+  },
+  "all_passed": false,
+  "host_behavior_verified": false,
+  "review_semantics_verified": false
+}

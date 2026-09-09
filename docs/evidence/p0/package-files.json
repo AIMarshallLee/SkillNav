@@ -1,0 +1,17 @@
+{
+  "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "SKILL.md": "27947bf9bf5d17bbc71c031c03804cd7b152bf5c1f36d066c00d4826e6dd6e9d",
+  "agents/openai.yaml": "97db5c35073315b9405d00e6999b47d104fd24a641cefb695ebe1208097031a6",
+  "references/creation.md": "10c44f925753ad23fb880791e588c7cd87a449065a77f7dcea0b58b82b8a7278",
+  "references/execution.md": "bb0276fa9901427103a0280e53c8244b82f37ddc52bed6982b39f0ca71378ee8",
+  "references/memory.md": "0d2d2441f8dd9a8c4ba178ff373dede67b464bb8f2b9caa988c38c2f032e9067",
+  "references/review.md": "778e07dcdb09073b4f650e6fc2f96cb7ed71f2e4061f639fe7b98e56cda5f39e",
+  "references/scanning.md": "eb1686c8c42f3f7c5b7bbaa6bc1dd7053d9d764a618a8ed0431f19b3eebdd059",
+  "requirements.txt": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a",
+  "scripts/create_skill.py": "f414f84a7ca9836225efa4581bb90ec463a39a3d2bbd8404434616a3326a189a",
+  "scripts/review_skill.py": "7956617b4494a6d9ec34c3eb07b3aa2b94a2a6dfeda64ab7e4a3cdd6690e8726",
+  "scripts/scan_skills.py": "6a449b83989de9e6e09926f91b58c23020992c64096d0e9b249a4025c7d7c33d",
+  "scripts/state.py": "4c61243302aa5774bd7a179fd9d232dce9138f1305af179443606d7408e8ce61",
+  "scripts/task_contract.py": "955195d954f19e50fd8f901f1482df44e4f194972527ec7e9bfb0d9a47bd23d3",
+  "scripts/workflow.py": "2bd99166867627345e74d30d1ed5e2176582fa0b0fe8144211af012c3b79037a"
+}

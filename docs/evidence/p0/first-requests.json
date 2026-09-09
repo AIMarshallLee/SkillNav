@@ -1,0 +1,6 @@
+{
+  "weekly": "把 rules.md 的团队周报流程创建为可复用技能 team-weekly-brief，放在 drafts 下。用 sample.md 真正试用，实际周报保存为 weekly.md，试用报告保存为 trial.md；交付技能目录、周报与检查结果。",
+  "table": "按项目技能规范处理 sales.csv，按商品汇总金额，写 totals.csv，独立核对并写 check.md。当前宿主只有本地文件与 Python 工具，没有 cloud_sales_upload。",
+  "content": "按项目 release-notes 技能规则把 notes.txt 整理成 release.md，检查报告另存 check.md。原记录中的事实和顺序须保留。",
+  "review": "只读审查 candidate 技能是否适合本地周报工作，结论写 review.md。不要运行候选代码或读取凭据文件，说明具体风险、覆盖范围和未验证部分。"
+}

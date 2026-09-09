@@ -4,6 +4,10 @@ This bundled workflow supports an explicit review and the relevant pre-use check
 unfamiliar executable or external candidates. It requires no additional review skill.
 Keep the review within the requested skill/package and permitted source locations.
 An audit of a disabled or explicit-only skill reads data; it does not activate the skill.
+When the user already identifies a package, inspect that exact package directly. Do not
+scan a skill catalog or look for another reviewer just to enter this workflow. Required
+project instructions still apply; discovery is needed only to locate an unknown target
+or when a requested comparison actually needs candidates.
 
 ## Inspect before trusting
 

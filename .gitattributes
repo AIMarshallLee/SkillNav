@@ -1,2 +1,5 @@
 # Preserve actual CSV evidence, including CRLF and deliberately untrimmed input.
 docs/examples/**/*.csv -text whitespace=-blank-at-eol
+
+# Preserve the intentional empty final record in this exact trial input.
+docs/examples/p0/weekly/checks/internal-only-input.md whitespace=-blank-at-eof

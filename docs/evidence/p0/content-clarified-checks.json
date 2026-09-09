@@ -1,0 +1,37 @@
+{
+  "before": {
+    "checks": {
+      "content_output": true,
+      "report_present": true,
+      "original_inputs_preserved": true
+    },
+    "all_passed": true,
+    "shell_commands": 6,
+    "nonzero_shell_commands": 0,
+    "host_behavior_verified_by_this_checker": false,
+    "run": {
+      "variant": "before",
+      "exit_code": 0,
+      "elapsed_seconds": 70.4
+    },
+    "events_sha256": "3417123b5d4a0c0753f920ef8f2f78f95ad6438bee5cd8db0de241288c24fd3b"
+  },
+  "after": {
+    "checks": {
+      "content_output": true,
+      "report_present": true,
+      "original_inputs_preserved": true
+    },
+    "all_passed": true,
+    "shell_commands": 7,
+    "nonzero_shell_commands": 0,
+    "host_behavior_verified_by_this_checker": false,
+    "run": {
+      "variant": "after",
+      "exit_code": 0,
+      "elapsed_seconds": 73.53
+    },
+    "events_sha256": "be7c143d4bfbfd20e881ce949df9d96bf65db9c4cd34e2565b8bc9c55d9189ce"
+  },
+  "prompt_sha256": "4251cdfa346b71210bf70bf088d31c4c5ad58cc86000258d9ba636e6f9d4552c"
+}

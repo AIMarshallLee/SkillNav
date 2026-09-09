@@ -11,6 +11,12 @@ Bundled local discovery, static risk indicators, instruction-skill creation and
 structural validation require no additional search/review/creator skill. External
 source checks and actual execution still use the host's authorized tools and accounts.
 The entry stays short; detailed workflows load only when needed.
+Known review targets and explicit creation requests bypass unrelated catalog discovery.
+Specialized routes check input format, host tools, dependencies and expected artifacts
+before execution. An optional read-only file-contract helper checks actual input/output
+bytes and keeps deliverables separate from accompanying reports. Host observations are
+not authenticated by the helper; content checks cover only the declared criteria.
+See [preflight and file contracts](skills/skillnav/references/execution.md#preflight-and-file-contracts).
 
 - “Complete this task and verify the result.”
 - “Find a suitable skill for this workflow.”
@@ -20,7 +26,8 @@ The entry stays short; detailed workflows load only when needed.
 Author **Marshall Lee**. Software **0.1.0**, development candidate, no formal Release.
 No proven general accuracy, speed or token-cost advantage over native Codex is claimed.
 Static matches need contextual review; no matches do not certify safety. Structural
-validation does not prove behavioral success. See [bundled-mode validation](docs/bundle-validation.md),
+validation does not prove behavioral success. See [preflight/artifact validation](docs/p0-validation.md),
+[bundled-mode validation](docs/bundle-validation.md),
 [large-catalog validation](docs/routing-validation.md) and [initial evidence](docs/verification.md).
 
 **Memory is off by default.** Execution and draft creation do not grant memory consent.
@@ -47,7 +54,7 @@ After approving the exact location, copy `skills/skillnav` to
 `~/.agents/skills/skillnav`, refusing an existing destination. The [Chinese README](README.md)
 contains the complete tested copy procedure. Use the project venv to run the installed
 scanner/creation validator, or another isolated interpreter with PyYAML. The static
-review and state helpers use only the standard library. Verify host discovery; restart
+review, file-contract and state helpers use only the standard library. Verify host discovery; restart
 if updates do not appear.
 
 After explicit user approval, the real user-directory installation was verified in a

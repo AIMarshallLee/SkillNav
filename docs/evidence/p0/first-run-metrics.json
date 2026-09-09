@@ -1,0 +1,132 @@
+{
+  "before": [
+    {
+      "case": "weekly",
+      "exit_code": 0,
+      "elapsed_seconds": 167.87,
+      "shell_commands": 12,
+      "nonzero_shell_commands": 1,
+      "file_change_events": 2,
+      "mcp_tool_calls": 0,
+      "usage": {
+        "input_tokens": 239928,
+        "cached_input_tokens": 191744,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4393,
+        "reasoning_output_tokens": 182
+      },
+      "events_sha256": "61e49a154968fe5f17251da733a92069002c649751612a4e28bffcdf275c4ea8",
+      "prompt_sha256": "071601f6ceba3a7c9d7605aad903804795d638f25d0a1ad984d8482b76383ef8"
+    },
+    {
+      "case": "table",
+      "exit_code": 0,
+      "elapsed_seconds": 113.58,
+      "shell_commands": 9,
+      "nonzero_shell_commands": 0,
+      "file_change_events": 0,
+      "mcp_tool_calls": 0,
+      "usage": {
+        "input_tokens": 207787,
+        "cached_input_tokens": 169472,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1971,
+        "reasoning_output_tokens": 114
+      },
+      "events_sha256": "e6ed8a8b591207c2a524de994f28aff1433ea2db77a7755dcde67b766667295b",
+      "prompt_sha256": "3388e40cb1c16c9544fed32840984dba766ada020b1b31ab19f27aa3bfedbd3b"
+    },
+    {
+      "case": "content",
+      "exit_code": 0,
+      "elapsed_seconds": 67.2,
+      "shell_commands": 5,
+      "nonzero_shell_commands": 0,
+      "file_change_events": 0,
+      "mcp_tool_calls": 0,
+      "usage": {
+        "input_tokens": 132441,
+        "cached_input_tokens": 97152,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1597,
+        "reasoning_output_tokens": 112
+      },
+      "events_sha256": "2a18d06d0ec552792820d2d85bb0be977d86d04531a3a523ce81147014308533",
+      "prompt_sha256": "d7c2b65c39c4b2dcf75c6c94d1bda0c7137ad18450cd3de5c6a8594de50842db"
+    }
+  ],
+  "after": [
+    {
+      "case": "weekly",
+      "exit_code": 0,
+      "elapsed_seconds": 166.71,
+      "shell_commands": 14,
+      "nonzero_shell_commands": 0,
+      "file_change_events": 2,
+      "mcp_tool_calls": 0,
+      "usage": {
+        "input_tokens": 274835,
+        "cached_input_tokens": 228864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4424,
+        "reasoning_output_tokens": 120
+      },
+      "events_sha256": "e505ca97b603ec411cdc607bae991988e70e77b565048e8188842f238013a747",
+      "prompt_sha256": "071601f6ceba3a7c9d7605aad903804795d638f25d0a1ad984d8482b76383ef8"
+    },
+    {
+      "case": "table",
+      "exit_code": 0,
+      "elapsed_seconds": 86.58,
+      "shell_commands": 6,
+      "nonzero_shell_commands": 0,
+      "file_change_events": 0,
+      "mcp_tool_calls": 0,
+      "usage": {
+        "input_tokens": 180409,
+        "cached_input_tokens": 139520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1861,
+        "reasoning_output_tokens": 67
+      },
+      "events_sha256": "0deb449f25d6b86b1de461e8fa805d55eba925130356d5912f54c9bb17251f97",
+      "prompt_sha256": "3388e40cb1c16c9544fed32840984dba766ada020b1b31ab19f27aa3bfedbd3b"
+    },
+    {
+      "case": "content",
+      "exit_code": 0,
+      "elapsed_seconds": 99.2,
+      "shell_commands": 7,
+      "nonzero_shell_commands": 0,
+      "file_change_events": 1,
+      "mcp_tool_calls": 0,
+      "usage": {
+        "input_tokens": 179351,
+        "cached_input_tokens": 139008,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2280,
+        "reasoning_output_tokens": 242
+      },
+      "events_sha256": "d50e98a5fef62d81210ac3a99e51ffd2d06af3931735d45441d7ba8fe7705382",
+      "prompt_sha256": "d7c2b65c39c4b2dcf75c6c94d1bda0c7137ad18450cd3de5c6a8594de50842db"
+    },
+    {
+      "case": "review",
+      "exit_code": 0,
+      "elapsed_seconds": 94.25,
+      "shell_commands": 10,
+      "nonzero_shell_commands": 1,
+      "file_change_events": 1,
+      "mcp_tool_calls": 0,
+      "usage": {
+        "input_tokens": 175718,
+        "cached_input_tokens": 135552,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2340,
+        "reasoning_output_tokens": 94
+      },
+      "events_sha256": "97867d824b2db28bb257302523139b6e77f3448da596bb1db235c49c3972f643",
+      "prompt_sha256": "aff2145ae63277d4c5950d4f7eaf2fc77ed70d5a1100d74454338e87eda65fa3"
+    }
+  ]
+}

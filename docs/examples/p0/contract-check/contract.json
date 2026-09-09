@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "inputs": [
+    {
+      "id": "source",
+      "path": "input.csv",
+      "format": "csv",
+      "checks": [
+        {
+          "type": "csv_columns",
+          "expected": [
+            "amount"
+          ]
+        },
+        {
+          "type": "csv_row_count",
+          "expected": 2
+        }
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "python",
+      "kind": "host_tool",
+      "status": "verified",
+      "evidence": "The test host ran the provided Python interpreter --version successfully."
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "answer",
+      "path": "answer.json",
+      "role": "deliverable",
+      "format": "json",
+      "checks": [
+        {
+          "type": "json_equals",
+          "expected": {
+            "total": "19.80"
+          }
+        }
+      ]
+    },
+    {
+      "id": "report",
+      "path": "report.md",
+      "role": "report",
+      "format": "text",
+      "checks": [
+        {
+          "type": "markdown_headings",
+          "expected": [
+            "# Checks"
+          ]
+        }
+      ]
+    }
+  ]
+}

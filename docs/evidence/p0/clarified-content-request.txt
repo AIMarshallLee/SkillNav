@@ -1,0 +1,1 @@
+按项目 release-notes 技能规则把 notes.txt 整理成 release.md，检查报告另存 check.md。发布稿只保留按规则筛选后应输出的事项原文及各节内顺序；按规则排除 internal 行，不添加原始记录区。

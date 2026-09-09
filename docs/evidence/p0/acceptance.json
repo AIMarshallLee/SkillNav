@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "weekly": true,
+    "table": true,
+    "clarified_content_before": true,
+    "clarified_content_after": true,
+    "review_scope_and_findings": true,
+    "contract_entry_rejects_wrong_actual_output": true,
+    "original_inputs_preserved": true,
+    "unit_regressions": true,
+    "security_review_fixes_rechecked": true
+  },
+  "original_ambiguous_content": "retained separately; not converted into a pass",
+  "accepted_local_scope": true,
+  "performance_superiority_proven": false,
+  "external_user_acceptance": false
+}

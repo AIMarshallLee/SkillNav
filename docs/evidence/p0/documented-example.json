@@ -1,0 +1,97 @@
+{
+  "script_sha256": "955195d954f19e50fd8f901f1482df44e4f194972527ec7e9bfb0d9a47bd23d3",
+  "preflight": {
+    "action": "preflight",
+    "artifacts": [
+      {
+        "id": "totals",
+        "path": "totals.csv",
+        "reason": "preflight_schema_only",
+        "role": "deliverable",
+        "status": "not_checked"
+      },
+      {
+        "id": "report",
+        "path": "check.md",
+        "reason": "preflight_schema_only",
+        "role": "report",
+        "status": "not_checked"
+      }
+    ],
+    "contract": {
+      "bytes": 660,
+      "path": "contract.json",
+      "sha256": "85d83fb40c47881a35042b9ae38183265953a2c7f7764c5b7edfd1e8284eba62"
+    },
+    "inputs": [
+      {
+        "bytes": 29,
+        "id": "sales",
+        "path": "sales.csv",
+        "reason": "ok",
+        "sha256": "78bd6cdd99478b7ad844d4c94cabae12466b4397e40e0d25f1f939b2df4f2e6f",
+        "status": "passed"
+      }
+    ],
+    "limits": "Read-only checks: 1 MiB per file, 64 input/artifact entries, 16 MiB total reads. Host requirements are observations, not authorization or tool attestation.",
+    "ok": true,
+    "requirements": [
+      {
+        "id": "python",
+        "kind": "host_tool",
+        "observed_status": "verified",
+        "reason": "observed_verified",
+        "status": "passed"
+      }
+    ]
+  },
+  "check": {
+    "action": "check",
+    "artifacts": [
+      {
+        "bytes": 28,
+        "id": "totals",
+        "path": "totals.csv",
+        "reason": "ok",
+        "role": "deliverable",
+        "sha256": "84fab70f8078929ed5fb8969da02699d0e727414bdfa6a9a7bf7e63b7aa2ec84",
+        "status": "passed"
+      },
+      {
+        "bytes": 50,
+        "id": "report",
+        "path": "check.md",
+        "reason": "ok",
+        "role": "report",
+        "sha256": "6c4c22ab2f860b5834fb019d39373516de1f873a199d4231936202cccfaeafb2",
+        "status": "passed"
+      }
+    ],
+    "contract": {
+      "bytes": 660,
+      "path": "contract.json",
+      "sha256": "85d83fb40c47881a35042b9ae38183265953a2c7f7764c5b7edfd1e8284eba62"
+    },
+    "inputs": [
+      {
+        "bytes": 29,
+        "id": "sales",
+        "path": "sales.csv",
+        "reason": "ok",
+        "sha256": "78bd6cdd99478b7ad844d4c94cabae12466b4397e40e0d25f1f939b2df4f2e6f",
+        "status": "passed"
+      }
+    ],
+    "limits": "Read-only checks: 1 MiB per file, 64 input/artifact entries, 16 MiB total reads. Host requirements are observations, not authorization or tool attestation.",
+    "ok": true,
+    "requirements": [
+      {
+        "id": "python",
+        "kind": "host_tool",
+        "observed_status": "verified",
+        "reason": "observed_verified",
+        "status": "passed"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "inputs_unchanged": {
+    "rules.md": true,
+    "sample.md": true
+  },
+  "trials": [
+    {
+      "input": "sample.md",
+      "output": "weekly.md",
+      "passed": true,
+      "section_item_counts": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "input_sha256": "a9c9dc2e57d4c0c443d42e5020265d5c761a219708125c763ff2d6477db2da5c",
+      "output_sha256": "9c72a409bc12ac82f239779fb2f92d1840aa4437d8f5f460d0f8fdb56f2c1e47"
+    },
+    {
+      "input": "checks/boundary-input.md",
+      "output": "checks/boundary-weekly.md",
+      "passed": true,
+      "section_item_counts": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "input_sha256": "130d1c8514db451a23e2c5a5407be162d3886c0a32a3d642305c5547004ca5bc",
+      "output_sha256": "93776cdcc5c77ef791db64f138096e9c02cf6851e4cdd222040f455ea6ef41b3"
+    },
+    {
+      "input": "checks/internal-only-input.md",
+      "output": "checks/internal-only-weekly.md",
+      "passed": true,
+      "section_item_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "input_sha256": "eeffa3947755291a11ad1792c3aa92f2428e111c487a591e4444d8b99bfc94e4",
+      "output_sha256": "4baa6983fdbf916e34fcfefad00e4afd1ee10f92855933c598937ae011248607"
+    }
+  ],
+  "scope": "Actual file structure and source-to-output comparison; not host registration or human acceptance."
+}

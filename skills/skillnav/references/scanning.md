@@ -6,6 +6,17 @@ query declared on-disk metadata. Set cwd to the known task root; do not enumerat
 surrounding workspace or run an unfiltered listing of skill roots before a query.
 When PyYAML is unavailable, explain the dependency and continue with available host
 metadata/authorized tools; do not force a new installation merely to discover skills.
+An identified review/update target or an explicit creation request normally bypasses
+discovery. Check an allowed root's existence as part of the needed query; do not keep
+probing a root already observed absent in this task.
+
+Reuse a current-session candidate page for the same query, roots and task scope when
+there is no evidence of a change; label its coverage as that observed snapshot. This
+is an in-context hint, not a disk cache, a new inventory, or proof no new skill exists.
+Refresh after a known install/update/removal, host-policy change, changed task/query,
+explicit refresh request or failed/stale selection. Before actual use, recheck the
+selected package's current instructions, invocation policy and runtime requirements.
+Never reuse an old permission or safety conclusion as current authorization.
 
 Resolve paths relative to this installed skill. With a project virtual environment:
 

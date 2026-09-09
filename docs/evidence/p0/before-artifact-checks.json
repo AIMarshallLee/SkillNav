@@ -1,0 +1,17 @@
+{
+  "variant": "before",
+  "checks": {
+    "original_inputs_preserved": true,
+    "weekly_output": true,
+    "weekly_trial_report": true,
+    "created_skill": true,
+    "table_totals": true,
+    "table_report": true,
+    "wrong_route_marker_absent": true,
+    "content_output": true,
+    "content_report": true
+  },
+  "all_passed": true,
+  "host_behavior_verified": false,
+  "review_semantics_verified": false
+}
