@@ -1,6 +1,6 @@
 interface:
   display_name: "SkillNav"
-  short_description: "Decide when skills help, find them, show checked results"
-  default_prompt: "Use $skillnav to decide whether a skill helps this task, find and use an eligible skill when needed, and show the checked result."
+  short_description: "One entry to find, review, use and create useful skills"
+  default_prompt: "Use $skillnav to complete my task, finding and reviewing useful skills as needed; create a tested reusable skill when I request one."
 policy:
   allow_implicit_invocation: false

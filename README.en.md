@@ -1,28 +1,33 @@
 # SkillNav
 
-**Does a skill help? Which one? Was it actually used?**
+**One entry: find a way, review relevant risks, and finish the task.**
 
-SkillNav builds on Codex's existing matching and planning. It handles simple tasks
-directly, retrieves relevant metadata when a large catalog is incomplete, checks
-eligibility, applies useful skills and gives a short evidence-based delivery receipt.
-Multi-term retrieval defaults to 12 candidates; lexical overlap is not a quality score.
-Scoped preferences remain optional. No proven general accuracy, speed or token-cost
-advantage over native Codex is claimed. Author:
-**Marshall Lee**. Software **0.1.0**, development candidate, no formal Release;
-V2.0/V2.1 refer to requirements.
+Tell `$skillnav` what you want done. It handles simple work directly, finds suitable
+skills when helpful, reviews relevant source and permissions, executes the authorized
+work and checks the result. Ask it to turn a repeatable workflow into a skill when you
+want one; creation and testing are separate from installation.
 
-**Memory is off by default.** Execution does not require memory consent. Say “do not
-read or write memory this time”, “stop learning”, “stop reading memory”, “forget that
-preference”, “clear this project”, or “clear SkillNav memory”. Reading and writing are
-separate controls. Clearing all removes preferences/outcomes and disables both.
+Bundled local discovery, static risk indicators, instruction-skill creation and
+structural validation require no additional search/review/creator skill. External
+source checks and actual execution still use the host's authorized tools and accounts.
+The entry stays short; detailed workflows load only when needed.
 
-The optional SQLite file is outside Git and skill directories: macOS
-`~/Library/Application Support/SkillNav/state.sqlite3`, Linux
-`${XDG_STATE_HOME:-~/.local/state}/skillnav/state.sqlite3`, Windows
-`%LOCALAPPDATA%\SkillNav\state.sqlite3`. No raw conversations, customer documents,
-credentials, telemetry or author server. State is not encrypted. Host-model processing
-and other tools may involve networking. Logical deletion excludes host chats, backups
-and storage remnants.
+- “Complete this task and verify the result.”
+- “Find a suitable skill for this workflow.”
+- “Review this skill without running its code.”
+- “Turn these rules into a reusable skill and try it on the sample.”
+
+Author **Marshall Lee**. Software **0.1.0**, development candidate, no formal Release.
+No proven general accuracy, speed or token-cost advantage over native Codex is claimed.
+Static matches need contextual review; no matches do not certify safety. Structural
+validation does not prove behavioral success. See [bundled-mode validation](docs/bundle-validation.md),
+[large-catalog validation](docs/routing-validation.md) and [initial evidence](docs/verification.md).
+
+**Memory is off by default.** Execution and draft creation do not grant memory consent.
+Scoped preferences are optional; current requests outrank them. Reading and writing
+are separate controls. No raw conversations, customer documents, credentials, telemetry
+or author server. State is not encrypted; host processing may involve networking.
+See [memory controls and limitations](skills/skillnav/references/memory.md).
 
 ## Setup
 
@@ -41,8 +46,9 @@ python3 -m venv .venv
 After approving the exact location, copy `skills/skillnav` to
 `~/.agents/skills/skillnav`, refusing an existing destination. The [Chinese README](README.md)
 contains the complete tested copy procedure. Use the project venv to run the installed
-scanner, or another isolated interpreter with PyYAML. The state helper uses only the
-standard library. Verify host discovery; restart if updates do not appear.
+scanner/creation validator, or another isolated interpreter with PyYAML. The static
+review and state helpers use only the standard library. Verify host discovery; restart
+if updates do not appear.
 
 After explicit user approval, the real user-directory installation was verified in a
 fresh Codex CLI session using only `$skillnav`, including a checked two-skill handoff.

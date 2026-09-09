@@ -1,0 +1,6 @@
+interface:
+  display_name: "team-weekly-brief"
+  short_description: "team-weekly-brief: 将逐行团队工作记录整理为简体中文 Markdown 团队周报草稿；适用于含 done、ne"
+  default_prompt: "Use $team-weekly-brief to complete the requested task and verify the result."
+policy:
+  allow_implicit_invocation: true

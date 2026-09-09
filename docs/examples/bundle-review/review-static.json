@@ -1,0 +1,81 @@
+{
+  "skill_root": "candidate",
+  "review_type": "bounded_static_indicators",
+  "automated_verdict": "indicators_found",
+  "coverage": {
+    "complete": false,
+    "files_read": 3,
+    "bytes_read": 424,
+    "entries_inspected": 6,
+    "skipped_entries": 1
+  },
+  "limits": {
+    "max_files": 128,
+    "max_file_bytes": 131072,
+    "max_total_bytes": 1048576,
+    "max_depth": 8,
+    "max_entries": 1024,
+    "max_findings": 64
+  },
+  "findings": [
+    {
+      "path": "SKILL.md",
+      "line": 5,
+      "category": "instruction_override",
+      "requires_context_review": true
+    },
+    {
+      "path": "scripts/run.py",
+      "line": 4,
+      "category": "credential_access",
+      "requires_context_review": true
+    },
+    {
+      "path": "scripts/run.py",
+      "line": 5,
+      "category": "network_access",
+      "requires_context_review": true
+    }
+  ],
+  "findings_by_category": {
+    "credential_access": 1,
+    "instruction_override": 1,
+    "network_access": 1
+  },
+  "findings_truncated": false,
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 185,
+      "sha256": "ad9cf9c525a5e03c2c4bf9461a0d4ccd250a7bda9828f76f421b071709a140e9"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 43,
+      "sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94"
+    },
+    {
+      "path": "scripts/run.py",
+      "bytes": 196,
+      "sha256": "78d4ed28338f8de4a7586245c5c91a50bbb59c3121d9bc427347f3cdada9290c"
+    }
+  ],
+  "skipped": [
+    {
+      "path": ".env",
+      "reason": "sensitive_file_not_read"
+    }
+  ],
+  "snapshot_sha256": "fc8f6a0aed73fef488b96ca2852fea67fe9c16d36ba87b03f93190fe77346177",
+  "snapshot_scope": "Only successfully read text files; skipped content is not fingerprinted",
+  "source_verification": "not_performed",
+  "execution_performed": false,
+  "safety_certified": false,
+  "limitations": [
+    "Pattern indicators need contextual review; documentation and prohibitions can match.",
+    "No matches do not establish safety. Obfuscation, dependencies, remote content and runtime behavior may be missed.",
+    "No candidate code, imports, installs, network calls or state writes are performed.",
+    "Use a trusted stable local directory and host sandbox; this is not isolation against hostile concurrent filesystem changes.",
+    "Review actual source/provenance, task fit, enablement, permissions and any unreviewed executable content before use."
+  ]
+}

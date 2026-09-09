@@ -16,6 +16,13 @@ No response SLA or currently enabled reporting feature is implied.
   fingerprint filters, independent feedback, bounded evidence retention and deletion.
 - Recovery helper: in-memory attempt/route budgets, upstream checks before handoff,
   no automatic replay of uncertain external effects, no external command runner.
+- Review helper: one explicit real skill folder, bounded local text reads, no candidate
+  imports/execution or networking, locations and hashes without matched code/secret
+  values, explicit skipped coverage and no safety certification. Static patterns are
+  indicators for contextual review; missing an indicator never establishes safety.
+- Creation helper: a bounded caller-supplied specification, a new directory under an
+  explicit output root, no overwrite/install/execution, and structural validation of
+  its generated package format. A valid structure is not a passed behavioral trial.
 
 ## What remains a host responsibility
 
@@ -31,6 +38,10 @@ within managed records, not forensic disk erasure or deletion of host chats/back
 Filesystem races and hostile local processes are outside the scanner's guarantee;
 use a trusted/stable local root and the host sandbox. Tests do not certify every OS,
 plugin, downstream skill, connector or account.
+The review helper does not inspect remote code or dependency trees, and its fingerprint
+covers only successfully read text files. The creation link checker covers supported
+inline local Markdown resource links, not every Markdown extension or URI. Host review
+must account for executable resources and any unsupported/unreviewed content.
 
 ## Operational response
 
